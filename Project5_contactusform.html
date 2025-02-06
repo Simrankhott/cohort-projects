@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        @keyframes fadeIn {
+            from {  transform: translateY(-10px); }
+            to {  transform: translateY(0); }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            /* box-sizing: border-box; */
+            font-family: Gilroy, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #886a6b, #fad0c4);
+        }
+
+        .contact-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        h1:hover{
+            color: #6c474d;
+            transition: cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            text-align: left;
+            display: block;
+            margin-bottom: 5px;
+            color: #444;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            outline: none;
+            transition: 0.3s ease-in-out;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #ff758c;
+            box-shadow: 0 0 5px rgba(255, 117, 140, 0.5);
+        }
+
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        button {
+            background-color: #6c474d;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff5e78;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contact-container">
+        <h1>Contact Us</h1>
+        <form class="contact-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="phone">Mobile No</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Your message..." required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>
