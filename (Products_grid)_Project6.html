@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,17 +9,17 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: Gilroy, sans-serif;
         }
 
         body {
-            background-color: #bc878759;
+            background-color: #d4aaaa77;
             text-align: center;
         }
 
         .header {
-            text-align: center;
             margin: 20px 0;
+            padding: 10px;
         }
 
         .header h1 {
@@ -34,11 +33,11 @@
         }
 
         .container {
-            width: 100%;
-            max-width: 77%;
+            width: 90%;
+            max-width: 1200px;
             margin: 20px auto;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
 
@@ -50,7 +49,7 @@
             text-align: center;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            justify-content: space-between;
             transition: transform 0.2s ease-in-out;
             height: 100%;
         }
@@ -61,7 +60,8 @@
 
         .product-card img {
             width: 100%;
-            height: 200px;
+            height: auto;
+            max-height: 200px;
             object-fit: cover;
             border-radius: 10px;
         }
@@ -70,10 +70,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            flex-grow: 1;
             gap: 5px;
             margin-top: 10px;
             width: 100%;
+            flex-grow: 1;
         }
 
         .product-info h3 {
@@ -83,7 +83,6 @@
         .product-info p {
             font-size: 0.9rem;
             color: #666;
-            flex-grow: 1;
         }
 
         .price-cart {
@@ -105,7 +104,7 @@
             background-color: #537eac;
             color: white;
             border: none;
-            padding: 6px 12px;
+            padding: 8px 15px;
             font-size: 0.9rem;
             border-radius: 5px;
             cursor: pointer;
@@ -121,12 +120,37 @@
             font-size: 1rem;
             color: #2b2828;
             font-weight: bold;
+            padding: 15px;
+            background-color: #ddd;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            .header p {
+                font-size: 0.9rem;
+            }
+            .container {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.3rem;
+            }
+            .header p {
+                font-size: 0.8rem;
+            }
+            .add-to-cart {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
-
 <body>
-
     <div class="header">
         <h1>Product Showcase</h1>
         <p>Explore our amazing products!</p>
@@ -134,10 +158,10 @@
 
     <div class="container">
         <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=600&auto=format&fit=crop&q=60">
+            <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=600">
             <div class="product-info">
                 <h3>Rosemary Oil</h3>
-                <p> Original Rosemary hairoil for hair growth </p>
+                <p>Original Rosemary hair oil for hair growth</p>
                 <div class="price-cart">
                     <div class="price">$99.99</div>
                     <button class="add-to-cart">Add to Cart</button>
@@ -235,3 +259,4 @@
 </body>
 
 </html>
+    
